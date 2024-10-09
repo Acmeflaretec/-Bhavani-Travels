@@ -9947,37 +9947,68 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
-    .stylish-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-family: Arial, sans-serif;
-      margin-bottom: 20px;
-      color: #333;
-  }
-  .stylish-table thead {
-      background-color: #1089ff;
-      color: white;
-      text-transform: uppercase;
-      font-weight: bold;
-  }
+   /* General Table Styles */
+.stylish-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.stylish-table thead {
+  background-color: #1089ff;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.stylish-table th, .stylish-table td {
+  padding: 15px;
+  border: 1px solid #ddd;
+}
+
+.stylish-table tbody tr {
+  background-color: #f9f9f9;
+}
+
+.stylish-table tbody tr:nth-child(even) {
+  background-color: #e6f2ff;
+}
+
+.stylish-table tbody tr:hover {
+  background-color: #d4eaff;
+  cursor: pointer;
+}
+
+.stylish-table tfoot {
+  background-color: #f1f1f1;
+  font-weight: bold;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
   .stylish-table th, .stylish-table td {
-      padding: 15px;
-      border: 1px solid #ddd;
+      padding: 10px;
+      font-size: 14px;
   }
-  .stylish-table tbody tr {
-      background-color: #f9f9f9;
+}
+
+@media screen and (max-width: 576px) {
+  .stylish-table th, .stylish-table td {
+      padding: 8px;
+      font-size: 12px;
   }
-  .stylish-table tbody tr:nth-child(even) {
-      background-color: #e6f2ff;
+  
+  .table-responsive {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
   }
-  .stylish-table tbody tr:hover {
-      background-color: #d4eaff;
-      cursor: pointer;
+  
+  .stylish-table {
+      width: auto; /* Allow horizontal scrolling */
   }
-  .stylish-table tfoot {
-      background-color: #f1f1f1;
-      font-weight: bold;
-  }
+}
 
   .whatsapp_float {
     position: fixed;
@@ -10006,5 +10037,95 @@ textarea.form-control {
 @media only screen and (max-width: 600px) {
   .hero-text{
     margin-bottom: 270px;
+  }
+}
+.carousel-item {
+  height: 100vh; /* Full viewport height */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Adjust for mobile devices */
+@media (max-width: 767px) {
+  .carousel-item {
+    background-size: contain; /* Ensures the full image is visible */
+    background-position: center;
+    height: 100vh; /* Full height on mobile */
+  }
+
+  /* Optional: Adjust text or content size for mobile */
+  .carousel-caption {
+    font-size: 16px;
+    padding: 20px;
+  }
+  .hero-wrap {
+    position: relative;
+    height: 50vh; /* Full screen height */
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+.hero-wrap {
+  position: relative;
+  height: 100vh; /* Full screen height */
+  background-size: cover;
+  background-position: center;
+}
+@media (max-width: 768px) {
+  .hero-wrap {
+      height: 50vh; /* Reduce height on mobile */
+      background-position: top; /* Adjust background position */
+      background-size: contain; /* Adjust background size for mobile */
+  }
+}
+/* For larger screens (desktop) */
+.carousel-item {
+  height: 100vh; /* Full screen height for desktops */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* For mobile devices (screens up to 767px) */
+@media (max-width: 767px) {
+  .carousel-item {
+    position: relative;
+    padding-bottom: 56.25%; /* This creates the 16:9 aspect ratio */
+    height: 0; /* Height is controlled by padding-bottom */
+    background-size: cover; /* Ensure the image covers the area */
+    background-position: center center; /* Center the image */
+    background-repeat: no-repeat;
+  }
+  
+  /* Optional: Adjust carousel caption */
+  .carousel-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 16px; /* Adjust font size for smaller screens */
+  }
+}
+/* For mobile devices (screens up to 767px) */
+@media (max-width: 767px) {
+  /* Ensure the carousel caption is visible on mobile */
+  .carousel-caption {
+    display: block !important; /* Make sure the text is displayed */
+    opacity: 1; /* Make it fully visible */
+    color: white; /* Ensure the text color is visible on the image */
+  }
+}
+/* Default: hide the carousel-item on larger screens */
+.mobile-only {
+  display: none;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .mobile-only {
+      display: block; /* Show this carousel-item only on mobile screens */
   }
 }
