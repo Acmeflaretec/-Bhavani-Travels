@@ -10164,3 +10164,8 @@ textarea.form-control {
       display: block; /* Show this carousel-item only on mobile screens */
   }
 }
+.seasonal-note {
+  font-size: 14px;
+  color: #666;
+  margin-top: 10px;
+}
