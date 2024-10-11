@@ -9990,14 +9990,14 @@ textarea.form-control {
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
   .stylish-table th, .stylish-table td {
-      padding: 10px;
+    
       font-size: 14px;
   }
 }
 
 @media screen and (max-width: 576px) {
   .stylish-table th, .stylish-table td {
-      padding: 8px;
+   
       font-size: 12px;
   }
 
